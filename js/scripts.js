@@ -100,7 +100,7 @@ $(document).ready(function() {
     }
   });
   $("form#coinAmounts").submit(function(event) {
-    var amount = ($("input#amount").val());
+    var amount = parseFloat($("input#amount").val());
     var result = coinCombination(amount);
 
     $(".change").text(result);
