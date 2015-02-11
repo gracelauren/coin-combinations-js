@@ -90,3 +90,22 @@ var coinCombination = function(coins) {
   return change;
 
 };
+
+$(document).ready(function() {
+  $('#fancy-inputs input[type="text"]').blur(function(){
+    if($(this).val().length > 0){
+      $(this).addClass('white');
+    } else {
+      $(this).removeClass('white');
+    }
+  });
+  $("form#coinAmounts").submit(function(event) {
+    var amount = ($("input#amount").val());
+    var result = coinCombination(amount);
+
+    $(".change").text(result);
+
+    $("#result").show();
+    event.preventDefault();
+  });
+});
