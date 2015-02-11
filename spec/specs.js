@@ -1,5 +1,9 @@
 describe("coinCombination", function() {
 
+  it('will return to you with one sacagawea dollar if you put in $1.00', function() {
+    expect(coinCombination(1.00)).to.equal("1 Sacagawea Dollar");
+  });
+
   it('will return to you with one kennedy half dollar if you put in $0.50', function() {
     expect(coinCombination(0.50)).to.equal("1 Kennedy Half Dollar");
   });

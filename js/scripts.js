@@ -1,11 +1,17 @@
 var coinCombination = function(coins) {
   var coins = coins;
+  var sacagawea = 0;
   var kennedyHalfDollar = 0;
   var quarter = 0;
   var dime = 0;
   var nickle = 0;
   var penny = 0;
   var change = "";
+
+  do {
+    sacagawea = Math.floor(coins / 1.00);
+    coins = Math.abs(coins % 1.00);
+  } while (coins >= 1.00);
 
   do {
     kennedyHalfDollar = Math.floor(coins / 0.50);
@@ -32,6 +38,13 @@ var coinCombination = function(coins) {
     coins = Math.abs(coins % 0.01);
   } while (coins >= .01);
 
+  if ( sacagawea > 1 ) {
+    change = change + sacagawea + " Sacagawea Dollars, ";
+  } else if ( sacagawea === 1 ) {
+    change = change + sacagawea + " Sacagawea Dollar, ";
+  } else {
+    change = change;
+  }
 
   if ( kennedyHalfDollar > 1 ) {
     change = change + kennedyHalfDollar + " Kennedy Half Dollars, ";
