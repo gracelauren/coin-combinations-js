@@ -1,4 +1,4 @@
-Anagram 
+Coin Combinations 
 ==============
 
 A website that lets users enter an amount of cents and shows the least amount of coins needed to make that change. 
